@@ -1,0 +1,26 @@
+{
+  "name": "api-reset",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./index.html",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "webpack-dev-server",
+    "build": "webpack --mode production",
+    "serve": "serve ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "hyperscript": "^2.0.2",
+    "serve": "^13.0.2"
+  },
+  "devDependencies": {
+    "webpack": "^5.72.1",
+    "webpack-bundle-analyzer": "^4.5.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.0"
+  }
+}

@@ -2,6 +2,7 @@ const webpack = require('webpack')
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const shouldAnalyze = process.argv.includes("--analyze")
 //npm run build -- --analyze
 
@@ -28,11 +29,15 @@ const config = {
     module: {
         rules: [
             {
-            test: /\.css|.scss$/i,
+            test: /\.scss$/i,
             use: [MiniCssExtractPlugin.loader,
             'css-loader',
             'sass-loader'
         ],
+            },
+            {
+                test: /\.png |.svg|.png$/i,
+                type: 'asset/resource'
             },
         ],
     },
@@ -44,6 +49,14 @@ const config = {
         }),
         new MiniCssExtractPlugin({
             filename: 'main.css'
+        }),
+        new CopyPlugin({
+            patterns: [
+            {
+            from: path.resolve(__dirname, "src", "assets/"),
+            to: "assets/images"
+            }
+            ]
         }),
     ]
     /* optimization:{

@@ -20,7 +20,7 @@ const config = {
     entry: './src/index.js',
     output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/dist',
+    /* publicPath: '/dist', */
     filename: '[name].bundle.js',
     assetModuleFilename: 'assets/',
     },
@@ -46,7 +46,7 @@ const config = {
         new HtmlWebpackPlugin({
             inject: "body",
             template: './index.html',
-            filename: './index.html'
+            filename: 'index.html'
         }),
         new MiniCssExtractPlugin({
             filename: 'main.css'

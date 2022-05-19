@@ -42,11 +42,11 @@ export function createCardMichis(michi,array,results){
             const divButtons = document.createElement("div")
                 divButtons.classList.add("mainContainer__containerButtons")
             const imgLike = document.createElement("img")
-                imgLike.setAttribute("src","../dist/assets/heartLikeVector.svg")
+                imgLike.setAttribute("src","../assets/heartLikeVector.svg")
                 imgLike.classList.add("mainContainer__containerButtons--iconLike", "iconSizeBig")
                 imgLike.alt = "Icono para darle like a la foto del michi"
             const imgSave = document.createElement("img")
-                imgSave.setAttribute("src","../dist/assets/saveVector.svg")
+                imgSave.setAttribute("src","../assets/saveVector.svg")
                 imgSave.classList.add("mainContainer__containerButtons--iconFav", "iconSizeBig")
                 imgSave.alt = "Icono para guardar la foto del michi en favoritos"
                 const containerCounterNodeList = document.querySelectorAll(".nav__right--containerCounter")
@@ -75,7 +75,7 @@ export function createCardFavoriteMichis(michi,array){
                 const divInfoUser = document.createElement("div")
                 divInfoUser.classList.add("mainContainer__containerInfoUser", "mainContainer__infoUser--flex-end")
                 const imgDeleteFav = document.createElement("img")
-                imgDeleteFav.setAttribute("src","../dist/assets/ant-design_delete-filled.svg")
+                imgDeleteFav.setAttribute("src","../assets/ant-design_delete-filled.svg")
                 imgDeleteFav.classList.add("mainContainer__containerInfoUser--iconUser", "iconSizeBig")
                 divInfoUser.appendChild(imgDeleteFav)
                 imgDeleteFav.alt = "Icono de borrar tus michis favoritos"
@@ -103,7 +103,7 @@ export function createCardFavoriteMichisNoMichi(array){
         const divNoMichi = document.createElement("div")
         divNoMichi.classList.add("mainContainerFavorites__noMichi")
         const imgNoMichi = document.createElement("img");
-        imgNoMichi.setAttribute("src","./dist/assets/emojione_crying-cat-face.svg")
+        imgNoMichi.setAttribute("src","./assets/emojione_crying-cat-face.svg")
         imgNoMichi.classList.add("mainContainerFavorites__noMichi--imgMichiSad")
         imgNoMichi.alt = "Foto de michi triste"
         const spanNoMichi = document.createElement("span");

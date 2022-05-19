@@ -5,4 +5,3 @@ export const API_URL_FAVORITES_DELETE = (id) => `https://api.thecatapi.com/v1/fa
 
 //Api Random name and img
 export const API_USER = "https://randomuser.me/api/1.3/?results=20&inc=name,picture"
-

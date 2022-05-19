@@ -22,8 +22,9 @@ export function createCardMichis(michi,array,results){
                 divInfoUser.classList.add("mainContainer__containerInfoUser")
             const imgUser = document.createElement("img")
                 imgUser.setAttribute("src",`${results[getRandomInt(1,20)].picture.thumbnail}`)
+                imgUser.alt = "Icono del usuario"
                 imgUser.classList.add("mainContainer__containerInfoUser--iconUser")
-            const h3 = document.createElement("h3")
+            const h3 = document.createElement("p")
                 h3.textContent = (`${results[getRandomInt(1,20)].name.first}`)
                 h3.classList.add("mainContainer__containerInfoUser--nameUser")
                 divInfoUser.appendChild(imgUser)
@@ -34,6 +35,7 @@ export function createCardMichis(michi,array,results){
                 /* imgPublic.dataset.src = `${michi.url}` */
                 imgPublic.setAttribute("src",`${michi.url}`)
                 imgPublic.setAttribute("loading","lazy")
+                imgPublic.alt = "Foto de michi"
                 imgPublic.classList.add("mainContainer__containerImgUser--imgMichi")
                 /* registerImg(imgPublic) */
                 divImgUser.appendChild(imgPublic)
@@ -42,9 +44,11 @@ export function createCardMichis(michi,array,results){
             const imgLike = document.createElement("img")
                 imgLike.setAttribute("src","../src/assets/heartLikeVector.svg")
                 imgLike.classList.add("mainContainer__containerButtons--iconLike", "iconSizeBig")
+                imgLike.alt = "Icono para darle like a la foto del michi"
             const imgSave = document.createElement("img")
                 imgSave.setAttribute("src","../src/assets/saveVector.svg")
                 imgSave.classList.add("mainContainer__containerButtons--iconFav", "iconSizeBig")
+                imgSave.alt = "Icono para guardar la foto del michi en favoritos"
                 const containerCounterNodeList = document.querySelectorAll(".nav__right--containerCounter")
                 const containerCounter = [...containerCounterNodeList]
                 imgSave.addEventListener("click", () =>{
@@ -70,10 +74,11 @@ export function createCardFavoriteMichis(michi,array){
                 article.classList.add("mainContainer__containerCard",   "mainContainer__containerCards--cardFav")
                 const divInfoUser = document.createElement("div")
                 divInfoUser.classList.add("mainContainer__containerInfoUser", "mainContainer__infoUser--flex-end")
-                const imgUser = document.createElement("img")
-                imgUser.setAttribute("src","../src/assets/ant-design_delete-filled.svg")
-                imgUser.classList.add("mainContainer__containerInfoUser--iconUser", "iconSizeBig")
-                divInfoUser.appendChild(imgUser)
+                const imgDeleteFav = document.createElement("img")
+                imgDeleteFav.setAttribute("src","../src/assets/ant-design_delete-filled.svg")
+                imgDeleteFav.classList.add("mainContainer__containerInfoUser--iconUser", "iconSizeBig")
+                divInfoUser.appendChild(imgDeleteFav)
+                imgDeleteFav.alt = "Icono de borrar tus michis favoritos"
                 const divImgUser = document.createElement("div")
                 divImgUser.classList.add("mainContainer__containerImgUser","mainContainer__containerImgUser--height")
                 const imgPublic = document.createElement("img")
@@ -81,9 +86,10 @@ export function createCardFavoriteMichis(michi,array){
                 /* imgPublic.dataset.src = `${michi.image.url}`
                 registerImg(imgPublic) */
                 imgPublic.setAttribute("src",`${michi.image.url}`)
-                imgPublic.setAttribute("loading","lazy")
+                imgPublic.setAttribute("loading","lazy");
+                imgPublic.alt = "Foto de michi"
                 divImgUser.appendChild(imgPublic)
-                imgUser.addEventListener("click", () =>{
+                imgDeleteFav.addEventListener("click", () =>{
                     deleteFavoriteMichi(michi.id)
                 })
                 article.appendChild(divInfoUser)
@@ -99,6 +105,7 @@ export function createCardFavoriteMichisNoMichi(array){
         const imgNoMichi = document.createElement("img");
         imgNoMichi.setAttribute("src","./src/assets/emojione_crying-cat-face.svg")
         imgNoMichi.classList.add("mainContainerFavorites__noMichi--imgMichiSad")
+        imgNoMichi.alt = "Foto de michi triste"
         const spanNoMichi = document.createElement("span");
         spanNoMichi.classList.add("mainContainerFavorites__noMichi--spanText")
         spanNoMichi.textContent = "Al parecer no tienes ningun michi favorito"

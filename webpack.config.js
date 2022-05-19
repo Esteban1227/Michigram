@@ -1,5 +1,7 @@
 const webpack = require('webpack')
 const path = require('path')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const shouldAnalyze = process.argv.includes("--analyze")
 //npm run build -- --analyze
 
@@ -23,7 +25,27 @@ const config = {
     devServer: {
     static: '.',
     },
-    plugins,
+    module: {
+        rules: [
+            {
+            test: /\.css|.scss$/i,
+            use: [MiniCssExtractPlugin.loader,
+            'css-loader',
+            'sass-loader'
+        ],
+            },
+        ],
+    },
+    plugins:[
+        new HtmlWebpackPlugin({
+            inject: "body",
+            template: './index.html',
+            filename: './index.html'
+        }),
+        new MiniCssExtractPlugin({
+            filename: 'main.css'
+        }),
+    ]
     /* optimization:{
         splitChunks:{
             chunks: "all",

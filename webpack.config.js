@@ -22,6 +22,7 @@ const config = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/dist',
     filename: '[name].bundle.js',
+    assetModuleFilename: 'assets/',
     },
     devServer: {
     static: '.',
@@ -37,7 +38,7 @@ const config = {
             },
             {
                 test: /\.png |.svg|.png$/i,
-                type: 'asset/resource'
+                type: 'asset/'
             },
         ],
     },
@@ -54,7 +55,7 @@ const config = {
             patterns: [
             {
             from: path.resolve(__dirname, "src", "assets/"),
-            to: "assets/images"
+            to: "assets/"
             }
             ]
         }),

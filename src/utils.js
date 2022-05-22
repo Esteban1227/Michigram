@@ -11,3 +11,4 @@ export function smoothscroll(){
             window.scrollTo (0,currentScroll - (currentScroll/5));
     }
 };
+

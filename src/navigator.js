@@ -1,30 +1,38 @@
 import { smoothscroll } from "./utils.js";
-import { homeBtn, favoriteBtn } from "./nodos.js";
-import { loadFavoriteMichis, loadRandomMichis } from "./michigram.service.js";
-import { favoritePage, homePage } from "./buttonFunctions.js";
+import { homeBtn, favoriteBtn,iconLogo } from "./nodos.js";
+import { favoritePage, homePage, closeMenu } from "./buttonFunctions.js";
 
 export function navigatorSpa(){
     if(location.hash.startsWith("#favorite")){
         favoritePage()
-    }else if(location.hash.startsWith("#Home")){
+    }else if(location.hash.startsWith("#home")){
         homePage()
     }else{
-        loadFavoriteMichis()
-        loadRandomMichis()
+        //Coming soon
+        /* notPage() */
     }
 }
 
 favoriteBtn.forEach(btn =>{
-    btn.addEventListener("click", () =>{
+    btn.addEventListener("click", e =>{
         location.hash ="favorite"
         smoothscroll()
+        closeMenu(e)
     })
 })
 
 homeBtn.forEach(btn =>{
-    btn.addEventListener("click", () =>{
-        location.hash ="Home"
+    btn.addEventListener("click", e =>{
+        location.hash ="home"
         smoothscroll()
+        closeMenu(e)
     })
+})
+
+iconLogo.addEventListener("click", e =>{
+    e.preventDefault()
+    location.hash ="home"
+    smoothscroll()
+    closeMenu(e)
 })
 

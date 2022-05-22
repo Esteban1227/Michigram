@@ -1,4 +1,9 @@
-import { openMenu } from "./buttonFunctions.js";
+import { openMenu,closeMenu } from "./buttonFunctions.js";
+
+//Header
+const containerCounterNodeList = document.querySelectorAll(".nav__right--containerCounter")
+export const containerCounter = [...containerCounterNodeList]
+export const iconLogo = document.getElementById("iconLogo")
 
 //section random Michis
 export const randomMichisSection = document.getElementById("randomMichis");
@@ -9,6 +14,7 @@ export const favoriteMichisSection = document.getElementById("favoriteMichis");
 //menu Mobile
 export const menuMobilContainer = document.getElementById("menuMobilContainer")
 export const btnMenuMobil = document.getElementById("btnMenuMobile")
+export const btnMenuMobilClose = document.getElementById("btnMenuMobileClose")
 btnMenuMobil.addEventListener("click", openMenu)
 
 //navigator

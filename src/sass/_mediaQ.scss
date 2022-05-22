@@ -35,9 +35,13 @@
                 #userDesktop{
                     display: none;
                 }
-                #btnMenuMobile{
+                &--iconMenuMobile{
                     display: block;
-                }
+                    button{
+                        background-color: transparent;
+                        border: none;
+                    }
+                } 
                 &--containerCounter{
                     display: none;
                     &--counter{

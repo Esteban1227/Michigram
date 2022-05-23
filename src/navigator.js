@@ -15,6 +15,7 @@ export function navigatorSpa(){
 
 favoriteBtn.forEach(btn =>{
     btn.addEventListener("click", e =>{
+        e.preventDefault()
         location.hash ="favorite"
         smoothscroll()
         closeMenu(e)
@@ -23,6 +24,7 @@ favoriteBtn.forEach(btn =>{
 
 homeBtn.forEach(btn =>{
     btn.addEventListener("click", e =>{
+        e.preventDefault()
         location.hash ="home"
         smoothscroll()
         closeMenu(e)

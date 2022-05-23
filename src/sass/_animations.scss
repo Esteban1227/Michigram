@@ -35,3 +35,30 @@
         transform: translateY(0px);
     }
 }
+
+.fadeInDown{
+    animation: 0.5s fadeInDown ease-in-out;
+}
+@keyframes fadeInDown {
+    0%{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+.fadeInUp{
+    animation: 0.5s fadeInUp ease-in-out;
+}
+@keyframes fadeInUp {
+    0%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+}

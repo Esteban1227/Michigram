@@ -2,6 +2,8 @@ import { menuMobilContainer,btnMenuMobil, btnMenuMobilClose, randomMichisSection
 //menu Mobile
 export function openMenu(e){
     menuMobilContainer.classList.remove("inactive")
+    menuMobilContainer.classList.add("fadeInDown")
+        menuMobilContainer.classList.remove("fadeInUp")
     btnMenuMobil.removeEventListener("click", openMenu)
     btnMenuMobil.addEventListener("click", closeMenu)
     btnMenuMobilClose.style.display = "block"
@@ -12,11 +14,15 @@ export function closeMenu(e){
     e.target.id === "menuMobilContainer"){
     return
     }else{
-        menuMobilContainer.classList.add("inactive")
+        menuMobilContainer.classList.remove("fadeInDown")
+        menuMobilContainer.classList.add("fadeInUp")
         btnMenuMobil.removeEventListener("click",closeMenu)
         btnMenuMobil.addEventListener("click", openMenu)
         btnMenuMobilClose.style.display = "none"
         btnMenuMobil.style.display = "block"
+        setTimeout(() => {
+            menuMobilContainer.classList.add("inactive")
+        }, 500);
     }
 
 }

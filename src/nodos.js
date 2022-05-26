@@ -1,4 +1,4 @@
-import { openMenu,closeMenu } from "./buttonFunctions.js";
+import { openMenu } from "./buttons/buttonFunctions.js";
 
 //Header
 const containerCounterNodeList = document.querySelectorAll(".nav__right--containerCounter")
@@ -15,7 +15,6 @@ export const favoriteMichisSection = document.getElementById("favoriteMichis");
 export const menuMobilContainer = document.getElementById("menuMobilContainer")
 export const btnMenuMobil = document.getElementById("btnMenuMobile")
 export const btnMenuMobilClose = document.getElementById("btnMenuMobileClose")
-btnMenuMobil.addEventListener("click", openMenu)
 
 //navigator
 const homeBtnNodeList = document.querySelectorAll(".nav__right--iconHome")

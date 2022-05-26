@@ -38,7 +38,7 @@ const config = {
             },
             {
                 test: /\.png |.svg|.png$/i,
-                type: 'asset/resource'
+                type: 'asset/images'
             },
         ],
     },
@@ -54,8 +54,8 @@ const config = {
         new CopyPlugin({
             patterns: [
             {
-            from: path.resolve(__dirname, "src", "assets/"),
-            to: "assets/"
+            from: path.resolve(__dirname, "src", "assets/images/"),
+            to: "assets/image/"
             }
             ]
         }),

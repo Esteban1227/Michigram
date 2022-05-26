@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    <!-- Header -->
     <header class="header">
         <nav class="nav  smoothTopToBottom">
             <div class="nav__left">
@@ -61,7 +62,14 @@
                 </ul>
             </div>
         </nav>
-        <section class="header__menuMobile inactive fadeInDown" id="menuMobilContainer">
+    </header>
+    <!-- //////////////// -->
+    
+    <!-- Main -->
+    <main class="main">
+
+        <!-- Section Menu -->
+        <section class="nav__menuMobile inactive fadeInDown" id="menuMobilContainer">
             <ul>
                 <li>
                     <a href="">
@@ -88,12 +96,16 @@
                 </li>
             </ul>
         </section>
-    </header>
-    <main class="main">
+        <!-- ///////////////////////////////////////////////////////////////////////// -->
+
+        <!-- Section Radom Michis -->
         <section class="container-grid">
             <div id="randomMichis" class="mainContainer smoothTopToBottom">
             </div>
         </section>
+        <!-- ////////////////////////// -->
+
+        <!--Section Favorite Michis  -->
         <section id="favoriteMichis" class="mainContainerFavorites inactive">
             <div class="mainContainerFavorites__container-h2">
                 <h2>Tus Michis Fvoritos:</h2>
@@ -112,6 +124,8 @@
                 </div>
             </article> -->
         </section>
+
+        <!-- Section Loading -->
         <section class="loading">
             <span id="error"></span>
             <div class="container">
@@ -119,7 +133,13 @@
                 <h2>Michigram</h2>
             </div>
         </section>
+        <!-- //////////////////// -->
+
+    
     </main>
+    <!-- ///////////////////////////////////////////////////////////////////////// -->
+    
+    
     <!-- <section id="uploadingMichi">
         <h2>sube la foto de tu michi</h2>
         <form id="uploandingFrom">
@@ -129,5 +149,4 @@
     </section> -->
     <!-- <script src="./main.bundle.js"></script> -->
 </body>
-
 </html>

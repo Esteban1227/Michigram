@@ -1,9 +1,12 @@
-import { menuMobilContainer,btnMenuMobil, btnMenuMobilClose, randomMichisSection, favoriteMichisSection } from "./nodos.js";
+import { menuMobilContainer,btnMenuMobil, btnMenuMobilClose, randomMichisSection, favoriteMichisSection } from "../nodos.js";
+import { smoothscroll } from "../utils/animationScrollTop.js";
+import { homeBtn, favoriteBtn,iconLogo } from "../nodos.js"; 
+
 //menu Mobile
 export function openMenu(e){
     menuMobilContainer.classList.remove("inactive")
     menuMobilContainer.classList.add("fadeInDown")
-        menuMobilContainer.classList.remove("fadeInUp")
+    menuMobilContainer.classList.remove("fadeInUp")
     btnMenuMobil.removeEventListener("click", openMenu)
     btnMenuMobil.addEventListener("click", closeMenu)
     btnMenuMobilClose.style.display = "block"
@@ -27,14 +30,40 @@ export function closeMenu(e){
 
 }
 
+btnMenuMobil.addEventListener("click", openMenu)
+
 //navigator
 export function favoritePage() {
     randomMichisSection.classList.add("inactive")
     favoriteMichisSection.classList.remove("inactive")
     randomMichisSection.classList.remove("smoothTopToBottom")
 }
-
 export function homePage() {
     randomMichisSection.classList.remove("inactive")
     favoriteMichisSection.classList.add("inactive")
 }
+
+favoriteBtn.forEach(btn =>{
+    btn.addEventListener("click", e =>{
+        e.preventDefault()
+        location.hash ="favorite"
+        smoothscroll()
+        closeMenu(e)
+    })
+})
+
+homeBtn.forEach(btn =>{
+    btn.addEventListener("click", e =>{
+        e.preventDefault()
+        location.hash ="home"
+        smoothscroll()
+        closeMenu(e)
+    })
+})
+
+iconLogo.addEventListener("click", e =>{
+    e.preventDefault()
+    location.hash ="home"
+    smoothscroll()
+    closeMenu(e)
+})

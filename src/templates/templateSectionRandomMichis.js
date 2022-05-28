@@ -2,7 +2,7 @@ import { containerCounter } from "../nodos.js";
 import { getRandomInt } from "../utils/numberRandom.js";
 import { saveFavoriteMichi } from "../michigram-service/loadFavoriteMichis/loadFavoriteMichis.service"
 import h from 'hyperscript'
-
+addEventListener
 //Cards
 export const createCardMichis = (michi,results) =>
     h(
@@ -24,9 +24,8 @@ export const createCardMichis = (michi,results) =>
             "div.mainContainer__containerImgUser",
             h(
                 "img.mainContainer__containerImgUser--imgMichi",{
-                    src:`${michi.url}`,
+                    "data-set":`${michi.url}`,
                     alt: "Foto de michi",
-                    loading: "lazi"
                 }
             )
         ),
@@ -35,7 +34,7 @@ export const createCardMichis = (michi,results) =>
             h(
                 "img",{
                     classList: "mainContainer__containerButtons--iconLike iconSizeBig",
-                    src: "./assets/images/heartLikeVector.svg",
+                    src: "./assets/image/heartLikeVector.svg",
                     alt: "Icono para darle like a la foto del michi",
                     /* onclick: function(){  
                     } */
@@ -44,7 +43,7 @@ export const createCardMichis = (michi,results) =>
             h(
                 "img",{
                     classList: "mainContainer__containerButtons--iconFav iconSizeBig",
-                    src: "./assets/images/saveVector.svg",
+                    src: "./assets/image/saveVector.svg",
                     alt: "Icono para darle like a la foto del michi",
                     onclick:() =>{
                         saveFavoriteMichi(michi.id)

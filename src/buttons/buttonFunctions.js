@@ -34,11 +34,13 @@ btnMenuMobil.addEventListener("click", openMenu)
 
 //navigator
 export function favoritePage() {
+    smoothscroll()
     randomMichisSection.classList.add("inactive")
     favoriteMichisSection.classList.remove("inactive")
     randomMichisSection.classList.remove("smoothTopToBottom")
 }
 export function homePage() {
+    smoothscroll()
     randomMichisSection.classList.remove("inactive")
     favoriteMichisSection.classList.add("inactive")
 }
@@ -67,3 +69,10 @@ iconLogo.addEventListener("click", e =>{
     smoothscroll()
     closeMenu(e)
 })
+
+document.body.addEventListener("click", e => closeMenu(e));
+document.body.addEventListener("keyup", e => {
+    if(e.keyCode === 27){
+        closeMenu(e)
+    }
+});

@@ -1,4 +1,6 @@
 node_modules
 .vscode
 dist
-./dist
+dist/index.html
+dist/main.css
+dist/main.bundle.js

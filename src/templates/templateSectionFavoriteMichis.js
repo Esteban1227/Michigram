@@ -16,7 +16,7 @@ export const  createCardFavoriteMichis = (michi) =>
             h(
                 "img",{
                     classList:"mainContainer__containerInfoUser--iconDelete iconSizeBig",
-                    src:"./assets/images/ant-design_delete-filled.svg",
+                    src:"./assets/image/ant-design_delete-filled.svg",
                     alt: "Icono de borrar tus michis favoritos",
                     onclick:() =>{
                         deleteFavoriteMichi(michi.id)
@@ -54,7 +54,7 @@ export const createCardFavoriteMichisNoMichi = () =>
             "div.mainContainerFavorites__noMichi",
             h(
                 "img.mainContainerFavorites__noMichi--imgMichiSad",{
-                    src:"./assets/images/emojione_crying-cat-face.svg",
+                    src:"./assets/image/emojione_crying-cat-face.svg",
                     alt:"Emoji de michi triste"
                 }
             ),

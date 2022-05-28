@@ -1,5 +1,3 @@
-import { openMenu } from "./buttons/buttonFunctions.js";
-
 //Header
 const containerCounterNodeList = document.querySelectorAll(".nav__right--containerCounter")
 export const containerCounter = [...containerCounterNodeList]

@@ -1,5 +1,4 @@
 import { navigatorSpa } from "./navigator.js";
-import { closeMenu } from "./buttons/buttonFunctions.js";
 import { loadRandomMichis, getMoreMichis } from "./michigram-service/loadRandomMichis/loadRandomMichis.service.js";
 import { loadFavoriteMichis } from "./michigram-service/loadFavoriteMichis/loadFavoriteMichis.service.js";
 import "./assets/sass/styles.scss"

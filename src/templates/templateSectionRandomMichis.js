@@ -1,9 +1,10 @@
-import { containerCounter } from "../nodos.js";
 import { getRandomInt } from "../utils/numberRandom.js";
-import { saveFavoriteMichi } from "../michigram-service/loadFavoriteMichis/loadFavoriteMichis.service"
 import h from 'hyperscript'
-addEventListener
+import { favoriteButton, likeButton } from "../buttons/buttonFunctions.js";
 //Cards
+
+
+
 export const createCardMichis = (michi,results) =>
     h(
         "article.mainContainer__containerCard",
@@ -24,8 +25,10 @@ export const createCardMichis = (michi,results) =>
             "div.mainContainer__containerImgUser",
             h(
                 "img.mainContainer__containerImgUser--imgMichi",{
-                    "data-set":`${michi.url}`,
+                    /* "data-set":`${michi.url}`, */
+                    src:`${michi.url}`,
                     alt: "Foto de michi",
+                    draggable: false,
                 }
             )
         ),
@@ -36,23 +39,18 @@ export const createCardMichis = (michi,results) =>
                     classList: "mainContainer__containerButtons--iconLike iconSizeBig",
                     src: "./assets/image/heartLikeVector.svg",
                     alt: "Icono para darle like a la foto del michi",
-                    /* onclick: function(){  
-                    } */
+                    onclick:(e) => {
+                        likeButton(e)
+                    }
                 }
             ),
             h(
                 "img",{
                     classList: "mainContainer__containerButtons--iconFav iconSizeBig",
-                    src: "./assets/image/saveVector.svg",
+                    src: "./assets/image/fluent_save-copy-20-regular.svg",
                     alt: "Icono para darle like a la foto del michi",
-                    onclick:() =>{
-                        saveFavoriteMichi(michi.id)
-                        containerCounter.forEach(item =>{
-                            item.classList.add("hardMoveRotate")
-                            setTimeout(() => {
-                                item.classList.remove("hardMoveRotate")
-                            }, 1500);
-                        })
+                    onclick:(e) =>{
+                        favoriteButton(e, michi)
                     }
                 }
             )

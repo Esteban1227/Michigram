@@ -2,6 +2,7 @@
 import { smoothscroll } from "../utils/animationScrollTop.js";
 import { deleteFavoriteMichi } from "../michigram-service/loadFavoriteMichis/loadFavoriteMichis.service"
 import h from 'hyperscript'
+import { favoriteButton } from "../buttons/buttonFunctions.js";
 
 //Cards Favorites 
 export const  createCardFavoriteMichis = (michi) =>
@@ -31,7 +32,8 @@ export const  createCardFavoriteMichis = (michi) =>
             h(
                 "img",{
                     classList:"mainContainer__containerImgUser--imgMichi mainContainer__containerImgUser--imgMichi--size",
-                    src:`${michi.image.url}`,
+                    /* src:`${michi.image.url}`, */
+                    "data-set":`${michi.image.url}`,
                     alt: "Foto de michi en favoritos",
                     loading: "lazi"
                 }

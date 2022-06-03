@@ -49,7 +49,7 @@
                 align-items: center;
                 position: fixed;
                 right: 0;
-                top: 63px;
+                top: 60px;
                 background-color: $PurplePrimary;
                 border-radius:0 0 10px 10px ;
                 box-shadow: -2px 3px 4px $PurpleSecondary;
@@ -67,7 +67,7 @@
                     }
                 } 
                 &--iconUser {
-                    border-radius: 8px;
+                    border-radius: 50%;
                 }
                 &--containerCounter{
                     position: relative;

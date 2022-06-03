@@ -1,6 +1,7 @@
-import { menuMobilContainer,btnMenuMobil, btnMenuMobilClose, randomMichisSection, favoriteMichisSection } from "../nodos.js";
+import { menuMobilContainer,btnMenuMobil, btnMenuMobilClose, randomMichisSection, favoriteMichisSection, containerCounter } from "../nodos.js";
 import { smoothscroll } from "../utils/animationScrollTop.js";
 import { homeBtn, favoriteBtn,iconLogo } from "../nodos.js"; 
+import { arrayMichiFav, saveFavoriteMichi } from "../michigram-service/loadFavoriteMichis/loadFavoriteMichis.service.js";
 
 //menu Mobile
 export function openMenu(e){
@@ -25,7 +26,7 @@ export function closeMenu(e){
         btnMenuMobil.style.display = "block"
         setTimeout(() => {
             menuMobilContainer.classList.add("inactive")
-        }, 500);
+        }, 300);
     }
 
 }
@@ -76,3 +77,39 @@ document.body.addEventListener("keyup", e => {
         closeMenu(e)
     }
 });
+
+
+//Btn Save Michi Favorite
+
+export function favoriteButton(e, michi){
+    const buttonSaveFavorite = e.target
+    const arrayMichiFavImg = []
+    arrayMichiFav.forEach(michiFav =>{
+        arrayMichiFavImg.push(michiFav.image_id)
+    })
+    if(arrayMichiFavImg.includes(michi.id)){
+        buttonSaveFavorite.src = "./assets/image/fluent_save-copy-24-filled.svg"
+    }else if(buttonSaveFavorite.attributes.src.value === "./assets/image/fluent_save-copy-24-filled.svg"){
+        buttonSaveFavorite.src = "./assets/image/fluent_save-copy-20-regular.svg"
+    }else{
+        buttonSaveFavorite.src = "./assets/image/fluent_save-copy-24-filled.svg"
+        saveFavoriteMichi(michi.id)
+        containerCounter.forEach(item =>{
+            item.classList.add("hardMoveRotate")
+            setTimeout(() => {
+                item.classList.remove("hardMoveRotate")
+            }, 1500);
+        })
+    }
+}
+
+//btn like michi
+
+export function likeButton(e){
+    const buttonLikeMichi = e.target
+    if(buttonLikeMichi.attributes.src.value === "./assets/image/heartLikedVector.svg"){
+        buttonLikeMichi.src = "./assets/image/heartLikeVector.svg"
+    }else{
+        buttonLikeMichi.src = "./assets/image/heartLikedVector.svg"
+    }
+}

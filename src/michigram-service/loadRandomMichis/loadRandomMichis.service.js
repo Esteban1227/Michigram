@@ -20,19 +20,21 @@ export async function loadRandomMichis() {
         arrayMichi.push(createCardMichis(michi,results))
     })
     arrayMichi.forEach(card =>{
-        const img = card.children[1].children[0]
-        img.addEventListener("error", () =>{
-            img.setAttribute("src", "./assets/image/image0011.jpg")
+        const imgMichiRandom = card.children[1].children[0]
+        imgMichiRandom.addEventListener("error", () =>{
+            imgMichiRandom.setAttribute("src", "./assets/image/image0011.jpg")
         })
-        registerImg(img)
+        /* const buttonSaveFavorite = card.children[2].children[1] */
     })
     randomMichisSection.append(...arrayMichi)
 }
 
+
+
 export async function getMoreMichis(){
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement
-
-    const scrollIsBottom = (scrollTop + clientHeight ) >= (scrollHeight -15)
+    const scrollIsBottom = (scrollTop + clientHeight ) >= (scrollHeight -20)
+    console.log(scrollIsBottom)
 
     if(scrollIsBottom){
         loadRandomMichis()

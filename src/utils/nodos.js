@@ -8,6 +8,12 @@ export const randomMichisSection = document.getElementById("randomMichis");
 
 //section favorites Michis
 export const favoriteMichisSection = document.getElementById("favoriteMichis");
+export const favoriteMichisSectionGrid = document.getElementById("favoriteMichisGrid");
+
+//section Category Michis
+export const categoryMichiSection = document.getElementById("categoryMichis")
+export const categoryMichiSectionGrid = document.getElementById("categoryMichisGrid")
+export const categoryMichiTitle = document.getElementById("titleCategory")
 
 //menu Mobile
 export const menuMobilContainer = document.getElementById("menuMobilContainer")

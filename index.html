@@ -22,41 +22,58 @@
                 <a href="" id="iconLogo">
                     <img class="nav__left--logo" src="./assets/image/pawprint.png" alt="Logo Michigram" id="iconLogo">
                 </a>
-                <h1 class="nav__left--title-h1">Michigram</h1>  
+                <h1 class="nav__left--title-h1">Michigram</h1>
             </div>
             <div class="nav__mid">
                 <div class="nav__mid--containerSearch">
-                    <img class="nav__mid--iconSearch" src="./assets/image/searchVector.svg" alt="search magnifier">
-                    <input class="nav__mid--inputSearch" type="text" placeholder="Buscar...">
+                    <img class="nav__mid--iconSearch" src="./assets/image/searchVector.svg" alt="search magnifier"
+                        id="search">
+                    <select name="select" id="selectCategory" class="nav__mid--inputSearch">
+                        <option value="Buscar" selected>Buscar</option>
+                        <option value="1">Michis con sombreros</option>
+                        <option value="2">Michis en el espacio</option>
+                        <option value="4">Michis con gafas de sol</option>
+                        <option value="5">Michis adentro de cajas</option>
+                        <option value="7">Michis con corbata</option>
+                        <option value="14">Michis en el lava manos</option>
+                        <option value="15">Michis con ropa</option>
+                    </select>
+                    <!-- <input class="nav__mid--inputSearch" type="text" placeholder="Buscar..."> -->
                 </div>
             </div>
             <div class="">
                 <ul class="nav__right">
                     <li>
                         <a href="/">
-                            <img class="nav__right--iconHome iconSizeSmall" src="./assets/image/homeVector.svg" alt="icon Home" id="homeDesktop">
+                            <img class="nav__right--iconHome iconSizeSmall" src="./assets/image/homeVector.svg"
+                                alt="icon Home" id="homeDesktop">
                         </a>
                     </li>
                     <li class="nav__right--containerCounter iconSizeSmall">
                         <a href="" class="nav__right--iconFav">
                             <div class="nav__right--containerCounter--counter"><span class="counterFav">0</span></div>
-                            <img class="iconSizeSmall" src="./assets/image/fluent_save-copy-24-filled.svg" alt="icon Favorites" >
+                            <img class="iconSizeSmall" src="./assets/image/fluent_save-copy-24-filled.svg"
+                                alt="icon Favorites">
                         </a>
                     </li>
                     <li>
                         <a href="">
-                            <img class="nav__right--iconUpload iconSizeSmall" src="./assets/image/uploadVectorsvg.svg" alt="icon upload" id="uploadDesktop">
+                            <img class="nav__right--iconUpload iconSizeSmall" src="./assets/image/uploadVectorsvg.svg"
+                                alt="icon upload" id="uploadDesktop">
                         </a>
                     </li>
                     <li>
                         <a href="">
-                            <img class="nav__right--iconUser iconSizeSmall" src="./assets/image/3F8uxbVqa.jpg" alt="User" id="userDesktop">
+                            <img class="nav__right--iconUser iconSizeSmall" src="./assets/image/3F8uxbVqa.jpg"
+                                alt="User" id="userDesktop">
                         </a>
                     </li>
                     <li class="nav__right--iconMenuMobile">
                         <button>
-                            <img id="btnMenuMobile" src="./assets/image/menuVector.svg" class="iconSizeSmall" alt="Menu">
-                            <img id="btnMenuMobileClose" src="./assets/image/menuVector.svg" style="display: none;" class="iconSizeSmall" alt="Menu">
+                            <img id="btnMenuMobile" src="./assets/image/menuVector.svg" class="iconSizeSmall"
+                                alt="Menu">
+                            <img id="btnMenuMobileClose" src="./assets/image/menuVector.svg" style="display: none;"
+                                class="iconSizeSmall" alt="Menu">
                         </button>
                     </li>
                 </ul>
@@ -64,7 +81,7 @@
         </nav>
     </header>
     <!-- //////////////// -->
-    
+
     <!-- Main -->
     <main class="main">
         <!-- Section Menu -->
@@ -72,25 +89,30 @@
             <ul>
                 <li>
                     <a href="">
-                        <img class="nav__right--iconHome iconSizeSmall" src="./assets/image/homeVector.svg" alt="Icon Home" id="homeMobie">
+                        <img class="nav__right--iconHome iconSizeSmall" src="./assets/image/homeVector.svg"
+                            alt="Icon Home" id="homeMobie">
                     </a>
                 </li>
                 <li>
                     <a href="" class="nav__right--iconFav">
-                        <div class="nav__right--containerCounter nav__right--containerCounter--menuMobile  iconSizeSmall">
+                        <div
+                            class="nav__right--containerCounter nav__right--containerCounter--menuMobile  iconSizeSmall">
                             <div class="nav__right--containerCounter--counter"><span class="counterFav">0</span></div>
-                            <img class="iconSizeSmall" src="./assets/image/heartVextor.svg" alt="icon Favorites" id="favDesktop">
+                            <img class="iconSizeSmall" src="./assets/image/heartVextor.svg" alt="icon Favorites"
+                                id="favDesktop">
                         </div>
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <img class="nav__right--iconUpload iconSizeSmall" src="./assets/image/uploadVectorsvg.svg" alt="Icon upload" id="uploadMobie">
+                        <img class="nav__right--iconUpload iconSizeSmall" src="./assets/image/uploadVectorsvg.svg"
+                            alt="Icon upload" id="uploadMobie">
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <img class="nav__right--iconUser iconSizeSmall" src="./assets/image/3F8uxbVqa.jpg" alt="User" id="userMobil">
+                        <img class="nav__right--iconUser iconSizeSmall" src="./assets/image/3F8uxbVqa.jpg" alt="User"
+                            id="userMobil">
                     </a>
                 </li>
             </ul>
@@ -100,33 +122,66 @@
         <!-- Section Radom Michis -->
         <section class="container-grid">
             <div id="randomMichis" class="mainContainer smoothTopToBottom">
+                <!-- <article class="mainContainer__containerCard">
+                    <div class="mainContainer__containerInfoUser"><img
+                            class="mainContainer__containerInfoUser--iconUser"
+                            src="https://randomuser.me/api/portraits/thumb/men/6.jpg" alt="Icono del usuario"><span
+                            class="mainContainer__containerInfoUser--nameUser">Jaxon</span></div>
+                    <div class="mainContainer__containerImgUser"><img class="mainContainer__containerImgUser--imgMichi"
+                            src="https://cdn2.thecatapi.com/images/9QA12xEpl.jpg" alt="Foto de michi" draggable="false">
+                    </div>
+                    <div class="mainContainer__containerButtons"><img
+                            class="mainContainer__containerButtons--iconLike iconSizeBig"
+                            src="./assets/image/heartLikeVector.svg"
+                            alt="Icono para darle like a la foto del michi"><img
+                            class="mainContainer__containerButtons--iconFav iconSizeBig"
+                            src="./assets/image/fluent_save-copy-20-regular.svg"
+                            alt="Icono para darle like a la foto del michi"></div>
+                </article> -->
             </div>
         </section>
         <!-- ////////////////////////// -->
 
         <!--Section Favorite Michis  -->
         <section id="favoriteMichis" class="mainContainerFavorites inactive">
-            <!-- <div class="mainContainerFavorites__container-h2">
+            <div class="mainContainerFavorites__container-h2">
                 <h2>Tus Michis Fvoritos:</h2>
             </div>
-            <div class="mainContainerFavorites__noMichi">
-                <img  class="mainContainerFavorites__noMichi--imgMichiSad" src="./assets/image/emojione_crying-cat-face.svg" alt="">
-                <span class="mainContainerFavorites__noMichi--spanText">Al parecer no tienes ningun michi favorito</span>
-                <button class="mainContainerFavorites__noMichi--btn">Buscar Michis</button>
-            </div> -->
-            <!--  <article class="mainContainer__containerCards mainContainer__containerCards--cardFav">
-                <div class="mainContainer__infoUser mainContainer__infoUser--flex-end">
-                    <img src="./assets/image/ant-design_delete-filled.svg" alt="">
+            <div id="favoriteMichisGrid" class="mainContainerFavoritesGrid">
+                <!-- <div class="mainContainerFavorites__noMichi">
+                    <img  class="mainContainerFavorites__noMichi--imgMichiSad" src="./assets/image/emojione_crying-cat-face.svg" alt="">
+                    <span class="mainContainerFavorites__noMichi--spanText">Al parecer no tienes ningun michi favorito</span>
+                    <button class="mainContainerFavorites__noMichi--btn">Buscar Michis</button>
+                </div> -->
+                <!--  <article class="mainContainer__containerCards mainContainer__containerCards--cardFav">
+                    <div class="mainContainer__infoUser mainContainer__infoUser--flex-end">
+                        <img src="./assets/image/ant-design_delete-filled.svg" alt="">
+                    </div>
+                    <div class="mainContainer__containerImgUser mainContainer__imgUser--height">
+                        <img class="mainContainer__containerImgUser--imgUser mainContainer__containerImgUser--imgUser--size" src="./assets/image/3F8uxbVqa.jpg" alt="Foto gatito aleatorio">
+                    </div>
+                </article> -->
+            </div>
+        </section>
+        <!-- ////////////////////////// -->
+
+        <!--Section Category Michis-->
+        <section id="categoryMichis" class="mainContainerCategoryMichis inactive">
+            <div class="loading-mini">
+                <div class="container">
+                    <img src="./assets/image/pawprint.png" alt="">
+                    <h2>Michigram</h2>
                 </div>
-                <div class="mainContainer__containerImgUser mainContainer__imgUser--height">
-                    <img class="mainContainer__containerImgUser--imgUser mainContainer__containerImgUser--imgUser--size" src="./assets/image/3F8uxbVqa.jpg" alt="Foto gatito aleatorio">
-                </div>
-            </article> -->
+            </div>
+            <div class="mainContainerFavorites__container-h2">
+                <h2 id="titleCategory"></h2>
+            </div>
+            <div class="mainContainerCategoryGrid" id="categoryMichisGrid">
+            </div>
         </section>
 
         <!-- Section Loading -->
         <section class="loading">
-            <span id="error"></span>
             <div class="container">
                 <img src="./assets/image/pawprint.png" alt="">
                 <h2>Michigram</h2>
@@ -134,11 +189,11 @@
         </section>
         <!-- //////////////////// -->
 
-    
+
     </main>
     <!-- ///////////////////////////////////////////////////////////////////////// -->
-    
-    
+
+
     <!-- <section id="uploadingMichi">
         <h2>sube la foto de tu michi</h2>
         <form id="uploandingFrom">
@@ -148,4 +203,5 @@
     </section> -->
     <!-- <script src="./main.bundle.js"></script> -->
 </body>
+
 </html>

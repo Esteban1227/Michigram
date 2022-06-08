@@ -1,7 +1,6 @@
 import { API_BASE, API_KEY, API_USER } from "../Apis.js"
-import { randomMichisSection} from "../../nodos.js";
+import { randomMichisSection} from "../../utils/nodos.js";
 import { createCardMichis } from "../../templates/templateSectionRandomMichis.js";
-import { registerImg} from "../../utils/lazyLoading.js";
 
 //Load Radom Michis
 export async function loadRandomMichis() {
@@ -31,10 +30,9 @@ export async function loadRandomMichis() {
 
 
 
-export async function getMoreMichis(){
+export async function getMoreRandomMichis(){
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement
     const scrollIsBottom = (scrollTop + clientHeight ) >= (scrollHeight -20)
-    console.log(scrollIsBottom)
 
     if(scrollIsBottom){
         loadRandomMichis()

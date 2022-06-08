@@ -1,7 +1,10 @@
-import { menuMobilContainer,btnMenuMobil, btnMenuMobilClose, randomMichisSection, favoriteMichisSection, containerCounter } from "../nodos.js";
+import { menuMobilContainer,btnMenuMobil, btnMenuMobilClose, randomMichisSection, favoriteMichisSection, containerCounter, categoryMichiSection } from "../utils/nodos.js";
 import { smoothscroll } from "../utils/animationScrollTop.js";
-import { homeBtn, favoriteBtn,iconLogo } from "../nodos.js"; 
+import { homeBtn, favoriteBtn,iconLogo } from "../utils/nodos.js"; 
 import { arrayMichiFav, saveFavoriteMichi } from "../michigram-service/loadFavoriteMichis/loadFavoriteMichis.service.js";
+import { getMoreRandomMichis } from "../michigram-service/loadRandomMichis/loadRandomMichis.service.js";
+import { getMoreMichisCategory, loadCategory } from "../michigram-service/loadCategoryMichis/loadCategoryMichis.service.js";
+
 
 //menu Mobile
 export function openMenu(e){
@@ -30,22 +33,26 @@ export function closeMenu(e){
     }
 
 }
-
 btnMenuMobil.addEventListener("click", openMenu)
+document.body.addEventListener("click", e => closeMenu(e));
+document.body.addEventListener("keyup", e => {
+    if(e.keyCode === 27){
+        closeMenu(e)
+    }
+});
+//
+
 
 //navigator
+//fav
 export function favoritePage() {
     smoothscroll()
     randomMichisSection.classList.add("inactive")
     favoriteMichisSection.classList.remove("inactive")
     randomMichisSection.classList.remove("smoothTopToBottom")
+    categoryMichiSection.classList.add("inactive")
+    window.removeEventListener("scroll", getMoreRandomMichis)
 }
-export function homePage() {
-    smoothscroll()
-    randomMichisSection.classList.remove("inactive")
-    favoriteMichisSection.classList.add("inactive")
-}
-
 favoriteBtn.forEach(btn =>{
     btn.addEventListener("click", e =>{
         e.preventDefault()
@@ -54,7 +61,16 @@ favoriteBtn.forEach(btn =>{
         closeMenu(e)
     })
 })
+//
 
+//home
+export function homePage() {
+    smoothscroll()
+    randomMichisSection.classList.remove("inactive")
+    favoriteMichisSection.classList.add("inactive")
+    categoryMichiSection.classList.add("inactive")
+    window.addEventListener("scroll", getMoreRandomMichis, false)
+}
 homeBtn.forEach(btn =>{
     btn.addEventListener("click", e =>{
         e.preventDefault()
@@ -63,20 +79,31 @@ homeBtn.forEach(btn =>{
         closeMenu(e)
     })
 })
-
 iconLogo.addEventListener("click", e =>{
     e.preventDefault()
-    location.hash ="home"
     smoothscroll()
     closeMenu(e)
 })
+//
 
-document.body.addEventListener("click", e => closeMenu(e));
-document.body.addEventListener("keyup", e => {
-    if(e.keyCode === 27){
-        closeMenu(e)
-    }
-});
+//category
+export function categoryPage(){
+    smoothscroll()
+    randomMichisSection.classList.add("inactive")
+    favoriteMichisSection.classList.add("inactive")
+    categoryMichiSection.classList.remove("inactive")
+    randomMichisSection.classList.remove("smoothTopToBottom")
+    window.removeEventListener("scroll", getMoreRandomMichis)
+    setTimeout(() => {
+        window.addEventListener("scroll", getMoreMichisCategory)
+    }, 1500);
+}
+
+/* const searchBtn = document.getElementById("search")
+searchBtn.addEventListener("click", () =>{
+    location.hash = "#category="
+}) */
+
 
 
 //Btn Save Michi Favorite
@@ -104,7 +131,6 @@ export function favoriteButton(e, michi){
 }
 
 //btn like michi
-
 export function likeButton(e){
     const buttonLikeMichi = e.target
     if(buttonLikeMichi.attributes.src.value === "./assets/image/heartLikedVector.svg"){

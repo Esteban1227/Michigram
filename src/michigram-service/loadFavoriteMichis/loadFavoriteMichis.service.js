@@ -1,5 +1,5 @@
 import { API_BASE, API_KEY, API_URL_FAVORITES_DELETE } from "../Apis.js"
-import { favoriteMichisSection } from "../../nodos.js";
+import { favoriteMichisSection, favoriteMichisSectionGrid } from "../../utils/nodos.js";
 import { createCardFavoriteMichis, createCardFavoriteMichisNoMichi, createTitle } from "../../templates/templateSectionFavoriteMichis.js"
 import { counterFav } from "./counterMichisInFavorites.js";
 import { registerImg } from "../../utils/lazyLoading.js";
@@ -13,13 +13,14 @@ export async function loadFavoriteMichis() {
         },
     });
     const data = await res.json();
-        favoriteMichisSection.innerHTML = ""
-        favoriteMichisSection.append(createTitle())
+        /* favoriteMichisSection.innerHTML = ""
+        favoriteMichisSection.append(createTitle()) */
+        favoriteMichisSectionGrid.innerHTML = ""
         const arrayMichi = []
         arrayMichiFav = [...data]
         /* console.log(arrayMichiFav) */
         if(data.length === 0){
-            favoriteMichisSection.append(createCardFavoriteMichisNoMichi())
+            favoriteMichisSectionGrid.append(createCardFavoriteMichisNoMichi())
         }else{
             data.forEach(michi =>{
                 arrayMichi.push(createCardFavoriteMichis(michi))
@@ -31,7 +32,7 @@ export async function loadFavoriteMichis() {
             })
             registerImg(img)
     })
-            favoriteMichisSection.append(...arrayMichi)
+            favoriteMichisSectionGrid.append(...arrayMichi)
         }
         counterFav(arrayMichi)
 }

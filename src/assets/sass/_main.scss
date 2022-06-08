@@ -14,8 +14,9 @@
             width: 100%;
             max-width: 600px;
             min-width: 300px;
+            overflow: hidden;
             height: auto;
-            background-color: $PurplePrimary;
+            background-color: white;
             border: solid 1px $PurpleSecondary;
             margin-bottom: 20px;
             border-radius: 10px;
@@ -25,6 +26,7 @@
             align-items: center;
             height: 30px;
             padding: 10px;
+            background-color: $PurplePrimary;
             &--iconUser{
                 width:  35px;
                 height: 35px;
@@ -46,6 +48,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            background-color: $PurplePrimary;
             height: 30px;
             padding: 10px;
             &--iconLike,
@@ -56,7 +59,14 @@
             }
         }
     }
-    .mainContainerFavorites{
+    .mainContainerFavoritesGrid, .mainContainerCategoryGrid{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 300px);
+        gap: 26px;
+        place-content: center;  
+    }
+    .mainContainerFavorites, .mainContainerCategoryMichis{
         display: flex;
         flex-wrap: wrap;
         width: 100%;
@@ -65,6 +75,7 @@
         justify-content: space-around;
         &__noMichi{
             width: 500px;
+            grid-column: 1/5;
             margin: 50px auto;
             display: flex;
             justify-content: center;
@@ -97,6 +108,18 @@
         }   
         .mainContainer{
             &__containerCards{
+                &--cardCategory{
+                    width: 300px;
+                    max-height: 500px;
+                    min-height: 200px;
+                    overflow: hidden;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    .mainContainer__containerImgUser--imgMichi{
+                        max-height: 400px;
+                    }
+                }
                 &--cardFav{
                     width: 300px;
                     height: 300px;
@@ -121,6 +144,7 @@
                 }
             }
     }
+    
     .nav__menuMobile{
         display: none;
     }

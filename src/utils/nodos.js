@@ -26,3 +26,19 @@ export const homeBtn = [...homeBtnNodeList]
 
 const favoriteBtnNodeList = document.querySelectorAll(".nav__right--iconFav")
 export const favoriteBtn = [...favoriteBtnNodeList]
+
+
+//Developing
+export const developingContainer = document.getElementById("Developing")
+export const developingBtn = document.getElementById("btnDeveloping")
+
+
+//upload
+export const btnUploadDesktop = document.getElementById("uploadDesktop")
+export const btnUploadMobile = document.getElementById("uploadMobile")
+
+
+//user
+export const btnUserDesktop = document.getElementById("userDesktop")
+export const btnUserMobile = document.getElementById("userMobile")
+

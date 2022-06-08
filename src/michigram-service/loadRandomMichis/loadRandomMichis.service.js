@@ -32,7 +32,7 @@ export async function loadRandomMichis() {
 
 export async function getMoreRandomMichis(){
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement
-    const scrollIsBottom = (scrollTop + clientHeight ) >= (scrollHeight -20)
+    const scrollIsBottom = (scrollTop + clientHeight ) >= (scrollHeight -100)
 
     if(scrollIsBottom){
         loadRandomMichis()

@@ -1,4 +1,4 @@
-import { categoryPage, favoritePage, homePage } from "../buttons/buttonFunctions.js";
+import { categoryPage, developing, favoritePage, homePage } from "../buttons/buttonFunctions.js";
 
 
 //navigator
@@ -9,6 +9,8 @@ export function navigatorSpa(){
         homePage()
     }else if(location.hash.startsWith("#category=")){
         categoryPage()
+    }else if(location.hash.startsWith("#developing")){
+        developing()
     }else{
         //Coming soon
         /* notPage() */

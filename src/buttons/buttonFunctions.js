@@ -1,4 +1,4 @@
-import { menuMobilContainer,btnMenuMobil, btnMenuMobilClose, randomMichisSection, favoriteMichisSection, containerCounter, categoryMichiSection } from "../utils/nodos.js";
+import { menuMobilContainer,btnMenuMobil, btnMenuMobilClose, randomMichisSection, favoriteMichisSection, containerCounter, categoryMichiSection, developingContainer, btnUploadDesktop, btnUploadMobile, btnUserDesktop, btnUserMobile, developingBtn } from "../utils/nodos.js";
 import { smoothscroll } from "../utils/animationScrollTop.js";
 import { homeBtn, favoriteBtn,iconLogo } from "../utils/nodos.js"; 
 import { arrayMichiFav, saveFavoriteMichi } from "../michigram-service/loadFavoriteMichis/loadFavoriteMichis.service.js";
@@ -51,6 +51,7 @@ export function favoritePage() {
     favoriteMichisSection.classList.remove("inactive")
     randomMichisSection.classList.remove("smoothTopToBottom")
     categoryMichiSection.classList.add("inactive")
+    developingContainer.classList.add("inactive")
     window.removeEventListener("scroll", getMoreRandomMichis)
 }
 favoriteBtn.forEach(btn =>{
@@ -69,6 +70,7 @@ export function homePage() {
     randomMichisSection.classList.remove("inactive")
     favoriteMichisSection.classList.add("inactive")
     categoryMichiSection.classList.add("inactive")
+    developingContainer.classList.add("inactive")
     window.addEventListener("scroll", getMoreRandomMichis, false)
 }
 homeBtn.forEach(btn =>{
@@ -93,10 +95,11 @@ export function categoryPage(){
     favoriteMichisSection.classList.add("inactive")
     categoryMichiSection.classList.remove("inactive")
     randomMichisSection.classList.remove("smoothTopToBottom")
+    developingContainer.classList.add("inactive")
     window.removeEventListener("scroll", getMoreRandomMichis)
-    setTimeout(() => {
+   /*  setTimeout(() => {
         window.addEventListener("scroll", getMoreMichisCategory)
-    }, 1500);
+    }, 1500); */
 }
 
 /* const searchBtn = document.getElementById("search")
@@ -139,3 +142,37 @@ export function likeButton(e){
         buttonLikeMichi.src = "./assets/image/heartLikedVector.svg"
     }
 }
+
+//developing
+export function developing(){
+    smoothscroll()
+    randomMichisSection.classList.add("inactive")
+    favoriteMichisSection.classList.add("inactive")
+    categoryMichiSection.classList.add("inactive")
+    developingContainer.classList.remove("inactive")
+    randomMichisSection.classList.remove("smoothTopToBottom")
+}
+
+developingBtn.addEventListener("click", () =>{
+    location.hash = "#home"    
+})
+btnUserMobile.addEventListener("click", (e) =>{
+    e.preventDefault()
+    location.hash = "#developing"
+})
+
+btnUserDesktop.addEventListener("click", (e) =>{
+    e.preventDefault()
+    location.hash = "#developing"
+})
+
+btnUploadMobile.addEventListener("click", (e) =>{
+    e.preventDefault()
+    location.hash = "#developing"
+})
+
+btnUploadDesktop.addEventListener("click", (e) =>{
+    e.preventDefault()
+    location.hash = "#developing"
+})
+
